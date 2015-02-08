@@ -1,6 +1,6 @@
 #Monitoring Postgres Service
 
 check process postgresql with pidfile <%= node['monit_configs-tlq']['postgres']['pidfile'] %>
-  start program = "systemctl start postgresql"
-  stop program = "systemctl stop postgresql"
+  start program = "/usr/bin/systemctl start postgresql.service"
+  stop program = "/usr/bin/systemctl stop postgresql.service"
   if 15 restarts within 15 cycles then timeout
